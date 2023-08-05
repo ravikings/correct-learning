@@ -39,8 +39,16 @@ class AnswerSerializer(serializers.ModelSerializer):
 		]
 		model = models.Answer
 
+
+class QuizOptionSerializer(serializers.ModelSerializer):
+	class Meta:
+		fields = [
+			'id',
+			'text'
+		]
+		model = models.Answer
 class QuestionSerializer(serializers.ModelSerializer):
-	answers = AnswerSerializer(
+	answers = QuizOptionSerializer(
 		read_only=True,
 		many=True
 	)
@@ -54,3 +62,17 @@ class QuestionSerializer(serializers.ModelSerializer):
 		]
 		model = models.Question
 
+class ResultSerializer(serializers.ModelSerializer):
+	answers = AnswerSerializer(
+		read_only=True,
+		many=True
+	)
+
+	class Meta:
+		fields = [
+			'id',
+			'quiz',
+			'prompt',
+			'answers'
+		]
+		model = models.Question

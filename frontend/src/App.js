@@ -8,8 +8,8 @@ import QuizBody from './containers/QuizBody';
 
 import { Header, Dimmer, Loader } from 'semantic-ui-react';
 
-// const localhost = 'http://127.0.0.1:8000';
-const HEROKU_BACKEND = 'https://izen-quiz-backend.herokuapp.com';
+const localhost = 'http://127.0.0.1:8000';
+const HEROKU_BACKEND = localhost; //'https://izen-quiz-backend.herokuapp.com';
 const API_HEADER = '/api/v2';
 
 class App extends React.Component {

@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'quiz_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-postgres_url = 'postgres://rkbvpbvhmhwpkl:dfdbee0878911220a024455cd4b11c5f66984a1607c8b2be30a7f1ce58d5e090@ec2-52-86-116-94.compute-1.amazonaws.com:5432/dbt1750f8sgc33'
-DATABASES = {}
-DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
+# postgres_url = 'postgres://rkbvpbvhmhwpkl:dfdbee0878911220a024455cd4b11c5f66984a1607c8b2be30a7f1ce58d5e090@ec2-52-86-116-94.compute-1.amazonaws.com:5432/dbt1750f8sgc33'
+# DATABASES = {}
+# DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
 # dj_database_url parses a given URL into something like this:
 # {
 #     'ENGINE': 'django.db.backends.postgresql',
@@ -93,6 +93,12 @@ DATABASES['default'] = dj_database_url.parse(postgres_url, conn_max_age=None)
 #     'PORT': '5432'
 # }
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

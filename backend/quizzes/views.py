@@ -97,7 +97,7 @@ class QuizViewSet(viewsets.ModelViewSet):
 	@action(detail=True,methods=['get'])
 	def all_questions(self, request, pk=None):
 		questions = models.Question.objects.filter(quiz_id=pk)
-		serializer = serializers.QuestionSerializer(
+		serializer = serializers.ResultSerializer(
 			questions,
 			many=True
 		)
