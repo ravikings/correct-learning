@@ -23,11 +23,11 @@ from quizzes import views
 router = routers.SimpleRouter()
 router.register(r'quizzes', views.QuizViewSet)
 router.register(r'questions', views.QuestionViewSet)
-router.register(r'answers', views.AnswerViewSet)
+#router.register(r'answers', views.AnswerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/quizzes/', include('quizzes.urls', namespace='quizzes')),
+    #url(r'^api/quizzes/', include('quizzes.urls', namespace='quizzes')),
     url(r'^api/v2/', include((router.urls, 'quizzes'), namespace='apiv2'))
 ]

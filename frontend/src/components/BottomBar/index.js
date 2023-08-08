@@ -147,7 +147,7 @@ class BottomBar extends React.Component {
 					alignItems: 'center',
 				}}
 			>
-				<div style={{width: '60%'}}>
+				<div style={{width: '60%'}} class="container">
 					<RenderNavAndMenuButtons
 						chosenQuizId={chosenQuizId}
 						questionNum={questionNum}
